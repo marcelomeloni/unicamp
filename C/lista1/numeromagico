@@ -1,0 +1,35 @@
+/******************************************************************************
+
+Número magico, adivinhação
+
+marcelomeloni
+
+*******************************************************************************/
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main()
+{
+  srand(time(NULL));
+int nDigitado, numeromagico = (rand() % 100) + 1;;
+
+int tentativas = 10;
+while(tentativas > 0){
+    printf("Qual o número magico?\n");
+    scanf("%d", &nDigitado);
+    if(nDigitado == numeromagico){
+        printf("Parabéns! Você acertou!");
+        break;
+    } else{
+        if (nDigitado > numeromagico){
+            printf("O número magico é menor que isso!\n");
+        } else {
+            printf("O número magico é maior que isso!\n");
+        }
+    }
+    tentativas -= 1;
+}
+
+	return 0;
+}
